@@ -1,0 +1,41 @@
+org: egestudent
+
+service: syncHub
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::586794471369:role/serverless
+
+package:
+  individually: true
+
+functions:
+  userSignUp:
+    handler: backend/functions/userSignup/index.handler
+    events:
+      - httpApi:
+          path: /signup
+          method: post
+  userLogin:
+    handler: backend/functions/userLogin/index.handler
+    events:
+      - httpApi:
+          path: /login
+          method: post
+
+resources:
+  Resources:
+    notesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: synchub
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
