@@ -25,6 +25,30 @@ functions:
       - httpApi:
           path: /login
           method: post
+  createMeetup:
+    handler: backend/functions/createMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: post
+  getAllMeetups:
+    handler: backend/functions/getAllMeetups/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: get
+  updateMeetup:
+    handler: backend/functions/updateMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: put
+  deleteMeetup:
+    handler: backend/functions/deleteMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: delete
 
 resources:
   Resources:
