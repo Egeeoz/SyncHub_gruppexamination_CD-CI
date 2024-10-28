@@ -43,7 +43,7 @@ exports.handler = async (event) => {
     const putCommand = new PutCommand(putParams);
     await db.send(putCommand);
 
-    return sendResponse(201, 'User successfully created');
+    return sendResponse(putParams.Item);
   } catch (error) {
     console.error(error);
     return sendError(500, 'Internal server error');

@@ -39,7 +39,7 @@ exports.handler = async (event) => {
     await db.send(new PutCommand(putParams));
 
     // Successful creation
-    return sendResponse(201, 'Meeting created successfully', { meetingId });
+    return sendResponse(putParams.Item);
   } catch (error) {
     console.error('Error creating meeting:', error);
 
