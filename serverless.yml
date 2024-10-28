@@ -11,10 +11,11 @@ provider:
 
 package:
   individually: true
+  excludeDevDependencies: true
 
 functions:
   userSignUp:
-    handler: backend/functions/userSignup/index.handler
+    handler: backend/functions/userSignUp/index.handler
     events:
       - httpApi:
           path: /signup
@@ -52,10 +53,22 @@ functions:
 
 resources:
   Resources:
-    notesTable:
+    UserTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: synchub
+        TableName: UserTable
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+
+    MeetupTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: MeetupTable
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S

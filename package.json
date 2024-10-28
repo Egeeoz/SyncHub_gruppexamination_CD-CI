@@ -1,5 +1,12 @@
 {
   "dependencies": {
+<<<<<<< Updated upstream
     "jsonwebtoken": "^9.0.2"
+=======
+    "@aws-sdk/client-dynamodb": "^3.679.0",
+    "@aws-sdk/lib-dynamodb": "^3.679.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.0.1"
+>>>>>>> Stashed changes
   }
 }

@@ -1,2 +1,9 @@
 # Node-moduler
 node_modules
+
+# Serverless framework files
+.serverless/
+.serverless
+*.log
+.serverless-*
+serverless.yml
