@@ -56,6 +56,18 @@ functions:
       - httpApi:
           path: /meetups/search
           method: get
+  attendMeetup:
+    handler: backend/functions/attendMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/attend
+          method: post
+  readMeetup:
+    handler: backend/functions/readMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/{id}
+          method: get
 
 resources:
   Resources:

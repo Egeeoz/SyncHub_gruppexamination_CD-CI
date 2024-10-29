@@ -1,3 +1,5 @@
+// path: root/backend/functions/deleteMeetup/deleteMeetup.js
+
 const { db } = require('../../services/db');
 const { DeleteCommand, GetCommand } = require('@aws-sdk/lib-dynamodb');
 const { sendResponse, sendError } = require('../../utils/sendResponse');

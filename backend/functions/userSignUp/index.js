@@ -1,3 +1,5 @@
+// path: root/backend/functions/userSignUp/userSignUp.js
+
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
 const { v4: uuidv4 } = require('uuid');

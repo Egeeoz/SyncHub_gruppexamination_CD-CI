@@ -1,3 +1,5 @@
+// path: root/backend/functions/createMeetup/createMeetup.js
+
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
 const { PutCommand } = require('@aws-sdk/lib-dynamodb');
@@ -29,6 +31,8 @@ exports.handler = async (event) => {
         location,
         description: description || '',
         organizerName,
+        attending: [],
+        attendingCount: 0,
         creatorId, // store creator ID for verification
         createdAt: new Date().toISOString(),
       },

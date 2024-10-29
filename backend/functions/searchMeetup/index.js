@@ -1,3 +1,5 @@
+// path: root/backend/functions/searchMeetup/searchMeetup.js
+
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
 const { ScanCommand } = require('@aws-sdk/lib-dynamodb');
