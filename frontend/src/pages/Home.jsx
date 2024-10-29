@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
+import './Home.css';
 
 function Home() {
   const { logout } = useAuth();
