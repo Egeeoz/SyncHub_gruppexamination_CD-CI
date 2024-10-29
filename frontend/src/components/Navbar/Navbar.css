@@ -28,7 +28,7 @@
 
 .navbar-links a,
 .navbar-links .auth-link {
-  color: #f1f1f1;
+  color: #c6c6c6;
   text-decoration: none;
   padding: 8px 16px;
   border: none;
@@ -36,10 +36,16 @@
   transition: background-color 0.3s;
   cursor: pointer;
   background: none;
+  font-size: 1rem;
 }
 
 .navbar-links a:hover,
-.navbar-links .auth-link:hover {
+.navbar-links {
+  color: #ffffff;
+}
+
+
+.auth-link:hover {
   background-color: #007bff;
   color: #ffffff;
 }
