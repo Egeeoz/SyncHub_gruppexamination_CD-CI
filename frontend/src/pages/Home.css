@@ -7,7 +7,7 @@
     min-height: 100vh;
     background-color: #121212; 
 }
-  
+
 .home-content {
     display: flex;
     flex-direction: column;
@@ -16,13 +16,13 @@
     max-width: 600px;
     margin-top: 2rem;
 }
-  
+
 .home-content h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #ffffff; 
 }
-  
+
 .logout-button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -33,8 +33,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-  
+
 .logout-button:hover {
     background-color: #0056b3;
 }
-  

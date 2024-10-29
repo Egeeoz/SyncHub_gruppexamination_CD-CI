@@ -1,36 +1,45 @@
+/* Navbar.css */
+
 .navbar {
-  max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: min-content auto;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-  background-color: #1f1f1f;
-  border-radius: 8px;
-  margin: 1rem auto;
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border-radius: 10px;
+  width: 100%;
 }
 
-.logo {
+.navbar-logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;
+}
+
+.navbar-logo a {
+  color: #f1f1f1;
   text-decoration: none;
 }
 
-.nav-links {
-  list-style: none;
+.navbar-links {
   display: flex;
   gap: 1.5rem;
 }
 
-.nav-links li a {
-  color: #a0a0a0;
+.navbar-links a,
+.navbar-links .auth-link {
+  color: #f1f1f1;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  background: none;
 }
 
-.nav-links li a:hover {
+.navbar-links a:hover,
+.navbar-links .auth-link:hover {
+  background-color: #007bff;
   color: #ffffff;
 }
