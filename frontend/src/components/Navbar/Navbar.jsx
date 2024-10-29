@@ -12,13 +12,13 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
+    navigate('/home');
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">SyncHub</Link> 
+        <Link to="/home">SyncHub</Link> 
       </div>
       <div className="navbar-links">
         <Link to="/events">Events</Link>

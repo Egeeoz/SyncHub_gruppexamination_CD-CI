@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Events.css';
@@ -11,6 +11,17 @@ function Events() {
     // Add more events as needed
   ];
 
+  // State to track applied status for each event
+  const [appliedEvents, setAppliedEvents] = useState({});
+
+  // Toggle "Apply" / "Cancel" for each event
+  const handleApplyClick = (eventId) => {
+    setAppliedEvents(prevState => ({
+      ...prevState,
+      [eventId]: !prevState[eventId]  // Toggle the applied status
+    }));
+  };
+
   return (
     <div className="events-container">
       <Navbar />
@@ -21,6 +32,12 @@ function Events() {
             <div key={event.id} className="event-card">
               <h2>{event.title}</h2>
               <p>{event.description}</p>
+              <button 
+                className="apply-button" 
+                onClick={() => handleApplyClick(event.id)}
+              >
+                {appliedEvents[event.id] ? "Cancel" : "Apply"}
+              </button>
             </div>
           ))}
         </div>
