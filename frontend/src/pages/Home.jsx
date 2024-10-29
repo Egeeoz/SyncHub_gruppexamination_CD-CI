@@ -11,7 +11,7 @@ function Home() {
       <div className="home-content">
         <Hero />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
