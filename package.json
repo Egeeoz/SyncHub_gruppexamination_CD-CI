@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "build": "vite build"
-  },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.679.0",
     "@aws-sdk/lib-dynamodb": "^3.679.0",
