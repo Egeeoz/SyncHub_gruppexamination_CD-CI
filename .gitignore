@@ -7,3 +7,9 @@ node_modules
 *.log
 .serverless-*
 serverless.yml
+
+# Logs 
+
+dist-ssr
+*.local
+
