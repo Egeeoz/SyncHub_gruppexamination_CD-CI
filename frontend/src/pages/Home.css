@@ -4,8 +4,7 @@
     align-items: center;
     padding: 2rem 1rem;
     color: #f1f1f1;
-    min-height: 100vh;
-    background-color: #121212; 
+    height: 100vh;
 }
 
 .home-content {
