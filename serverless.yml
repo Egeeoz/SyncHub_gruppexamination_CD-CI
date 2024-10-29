@@ -50,6 +50,12 @@ functions:
       - httpApi:
           path: /meetups
           method: delete
+  searchMeetups:
+    handler: backend/functions/searchMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/search
+          method: get
 
 resources:
   Resources:
