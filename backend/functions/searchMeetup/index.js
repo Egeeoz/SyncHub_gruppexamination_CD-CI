@@ -1,4 +1,4 @@
-// path: root/backend/functions/searchMeetup/searchMeetup.js
+// path: root/backend/functions/searchMeetup/index.js
 
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
@@ -40,9 +40,8 @@ exports.handler = async (event) => {
       const dateParts = item.date?.toLowerCase().split(/[\s-/]+/) || [];
       const dateMatch = dateParts.some(
         (part) =>
-          part.includes(lowercaseKeyword) || // Part contains the keyword
-          lowercaseKeyword.includes(part) || // Keyword contains the part
-          // Check for partial number matches
+          part.includes(lowercaseKeyword) ||
+          lowercaseKeyword.includes(part) ||
           (part.match(/\d+/) &&
             lowercaseKeyword.match(/\d+/) &&
             part.includes(lowercaseKeyword))

@@ -1,4 +1,4 @@
-// path: root/backend/functions/readMeetup/readMeetup.js
+// path: root/backend/functions/readMeetup/index.js
 
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');

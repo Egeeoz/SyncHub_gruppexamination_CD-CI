@@ -1,4 +1,4 @@
-// path: root/backend/functions/userLogin/userLogin.js
+// path: root/backend/functions/userLogin/index.js
 
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');

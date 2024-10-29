@@ -1,4 +1,4 @@
-// path: root/backend/functions/attendMeetup/attendMeetup.js
+// path: root/backend/functions/attendMeetup/index.js
 
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
@@ -8,12 +8,12 @@ exports.handler = async (event) => {
   try {
     const { meetupId, username } = JSON.parse(event.body);
 
-    // Validate required fields
+    // Kontrollera obligatoriska fält
     if (!meetupId || !username) {
-      return sendError(400, 'Meetup and user name are required');
+      return sendError(400, 'Meetup ID och användarnamn krävs');
     }
 
-    // First, get the current meetup data
+    // Hämta nuvarande meetup-data
     const getParams = {
       TableName: 'MeetupTable',
       Key: {
@@ -24,10 +24,18 @@ exports.handler = async (event) => {
     const { Item: meetup } = await db.send(new GetCommand(getParams));
 
     if (!meetup) {
-      return sendError(404, 'Meeting not found');
+      return sendError(404, 'Meetup hittades inte');
     }
 
-    // Check if user is already attending
+    // Kontrollera om max antal deltagare har uppnåtts
+    const maxAttendees = meetup.maxAttendees || 20; // Definiera ett maxantal, t.ex. 20, om det inte är angivet
+    const attendingCount = meetup.attendingCount || 0;
+
+    if (attendingCount >= maxAttendees) {
+      return sendError(400, 'Meetup är full, inga fler deltagare kan anmälas');
+    }
+
+    // Kontrollera om användaren redan deltar
     const attending = meetup.attending || [];
     const isAttending = attending.includes(username);
 
@@ -35,7 +43,7 @@ exports.handler = async (event) => {
     let message;
 
     if (isAttending) {
-      // Remove user from attending list
+      // Ta bort användaren från deltagarlistan
       updateParams = {
         TableName: 'MeetupTable',
         Key: {
@@ -49,9 +57,9 @@ exports.handler = async (event) => {
         },
         ReturnValues: 'ALL_NEW',
       };
-      message = 'Successfully unregistered attendance';
+      message = 'Avanmälan lyckades';
     } else {
-      // Add user to attending list
+      // Lägg till användaren i deltagarlistan
       updateParams = {
         TableName: 'MeetupTable',
         Key: {
@@ -67,9 +75,10 @@ exports.handler = async (event) => {
         },
         ReturnValues: 'ALL_NEW',
       };
-      message = 'Successfully registered attendance';
+      message = 'Anmälan lyckades';
     }
 
+    // Uppdatera meetup-data
     const result = await db.send(new UpdateCommand(updateParams));
 
     return sendResponse({
@@ -77,8 +86,7 @@ exports.handler = async (event) => {
       meetup: result.Attributes,
     });
   } catch (error) {
-    console.error('Error updating attendance:', error);
-
-    return sendError(500, 'Internal server error');
+    console.error('Fel vid uppdatering av deltagande:', error);
+    return sendError(500, 'Internt serverfel');
   }
 };

@@ -68,6 +68,12 @@ functions:
       - httpApi:
           path: /meetups/{id}
           method: get
+  getUserMeetup:
+    handler: backend/functions/getUserMeetups/index.handler
+    events:
+      - httpApi:
+          path: /meetups/user/{username}
+          method: get
 
 resources:
   Resources:

@@ -1,4 +1,4 @@
-// path: root/backend/functions/updateMeetup/updateMeetup.js
+// path: root/backend/functions/updateMeetup/index.js
 
 const { sendResponse, sendError } = require('../../utils/sendResponse');
 const { db } = require('../../services/db');
