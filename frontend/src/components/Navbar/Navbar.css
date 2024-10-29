@@ -1,68 +1,49 @@
-/* LoginRegister.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.auth-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #333;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.navbar {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  background-color: #222;
-  color: #bbb;
+  margin: 1rem auto;
 }
 
-.auth-container h2 {
-  margin-bottom: 20px;
+.logo {
   font-size: 1.5rem;
-  color: white;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.auth-container form {
+.nav-links {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 1.5rem;
 }
 
-.auth-container input {
-  padding: 10px;
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
   font-size: 1rem;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #333;
-  color: #bbb;
-}
-
-.auth-container input::placeholder {
-  color: #888;
-}
-
-.auth-container button {
-  padding: 10px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.auth-container button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.auth-container button:last-of-type {
-  background-color: transparent;
-  color: #bbb;
-  border: none;
-  text-decoration: underline;
-  cursor: pointer;
   transition: color 0.3s;
 }
 
-.auth-container button:last-of-type:hover {
-  color: white;
+.nav-links li a:hover {
+  color: #a0a0a0;
 }
