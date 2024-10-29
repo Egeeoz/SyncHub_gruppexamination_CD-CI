@@ -9,7 +9,7 @@ node_modules
 serverless.yml
 
 # Logs 
-dist
+
 dist-ssr
 *.local
 
