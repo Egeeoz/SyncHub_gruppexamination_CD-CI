@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import Hero from '../components/Hero/Hero';
 import './Home.css';
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
     <div className="home-container">
       <Navbar />
       <div className="home-content">
-        <h1>Welcome to the Home Page</h1>
+        <Hero />
       </div>
       <Footer/>
     </div>
