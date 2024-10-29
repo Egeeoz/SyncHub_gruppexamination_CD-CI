@@ -1,0 +1,68 @@
+/* LoginRegister.css */
+
+.auth-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #222;
+  color: #bbb;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #bbb;
+}
+
+.auth-container input::placeholder {
+  color: #888;
+}
+
+.auth-container button {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.auth-container button:last-of-type {
+  background-color: transparent;
+  color: #bbb;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.auth-container button:last-of-type:hover {
+  color: white;
+}
