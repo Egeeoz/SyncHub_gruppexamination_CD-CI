@@ -1,5 +1,9 @@
 name: Deploy SyncHub
 
+defaults:
+  run:
+    working-directory: ./frontend
+
 on:
   push:
     branches:

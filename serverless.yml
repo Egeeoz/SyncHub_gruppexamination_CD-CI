@@ -74,6 +74,12 @@ functions:
       - httpApi:
           path: /meetups/user/{username}
           method: get
+  rateMeetup:
+    handler: backend/functions/rateMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/rate
+          method: post
 
 resources:
   Resources:
