@@ -9,12 +9,12 @@ jobs:
   check-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Check if the source branch is dev
+      - name: Check if the source branch is Dev
         run: |
 
 
-          if [ "${{ github.head_ref }}" != "dev" ]; then
+          if [ "${{ github.head_ref }}" != "Dev" ]; then
 
-            echo "Merging from branch `${{ github.head_ref }}` to `main` is not allowed. Only merges from `dev` are permitted."
+            echo "Merging from branch `${{ github.head_ref }}` to `main` is not allowed. Only merges from `Dev` are permitted."
             exit 1;
           fi
