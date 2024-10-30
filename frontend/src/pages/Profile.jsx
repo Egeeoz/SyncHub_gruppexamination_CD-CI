@@ -3,7 +3,7 @@ import Footer from '../components/Footer/Footer';
 import './Profile.css';
 
 import React, { useEffect, useState } from 'react';
-import '../components/eventHistory/Eventhistory.css';
+// import '../components/eventHistory/Eventhistory.css';
 import { useAuth } from '../auth/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
