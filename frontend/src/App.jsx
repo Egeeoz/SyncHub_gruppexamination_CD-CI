@@ -8,7 +8,8 @@ import {
 import { AuthProvider, useAuth } from './auth/AuthContext';
 import LoginRegister from './components/loginregister/LoginRegister';
 import Home from './pages/Home';
-import Events from './pages/Events'; 
+import Events from './pages/Events';
+import Profile from './pages/Profile';
 import './App.css';
 
 const App = () => (
@@ -28,11 +29,18 @@ const App = () => (
           path="/events"
           element={
             <PrivateRoute>
-              <Events /> 
+              <Events />
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   </AuthProvider>

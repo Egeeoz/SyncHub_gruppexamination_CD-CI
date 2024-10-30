@@ -1,0 +1,122 @@
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+  width: calc(50% - 10px);
+  background-color: #ffffff;
+}
+
+.event-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.event-banner {
+  height: 120px;
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+  animation: gradient-rotate 10s ease-in-out infinite;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 23%;
+  }
+  50% {
+    background-position: 100% 78%;
+  }
+  100% {
+    background-position: 0% 23%;
+  }
+}
+
+.content-group {
+  padding: 20px;
+}
+
+.event-header {
+  margin-bottom: 10px;
+}
+
+.event-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.event-details {
+  margin: 15px 0;
+}
+
+.event-details p {
+  font-size: 1em;
+  margin: 5px 0;
+  color: #666666;
+}
+
+.description-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-size: 1em;
+  color: #c4c4c4;
+  line-height: 1.6;
+}
+
+.join-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.join-button:hover {
+  background-color: #333333;
+}
+
+.no-events {
+  font-size: 1.5em;
+  text-align: center;
+  color: #aaaaaa;
+  margin-top: 50px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-title {
+    font-size: 1.5em;
+  }
+
+  .join-button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}

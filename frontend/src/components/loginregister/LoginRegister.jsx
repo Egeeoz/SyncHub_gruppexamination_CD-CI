@@ -37,7 +37,7 @@ function LoginRegister() {
         return;
       }
 
-      login();
+      login(username);
       navigate('/home');
     } catch (error) {
       alert('An error occurred: ' + error.message); // Show error message

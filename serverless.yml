@@ -8,6 +8,18 @@ provider:
   region: eu-north-1
   iam:
     role: arn:aws:iam::586794471369:role/serverless
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
 
 package:
   individually: true

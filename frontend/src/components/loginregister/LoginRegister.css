@@ -13,7 +13,7 @@
 /* Header */
 .auth-container h2 {
   font-size: 1.5rem;
-  color: #f1f1f1; 
+  color: #f1f1f1;
 }
 
 /* Form styling */
@@ -28,26 +28,26 @@
 .auth-container input {
   padding: 12px;
   font-size: 1rem;
-  border: 1px solid #333; 
+  border: 1px solid #333;
   border-radius: 6px;
-  background-color: #2a2a2a; 
+  background-color: #2a2a2a;
   color: #f1f1f1;
 }
 
 /* Primary button styling */
-.auth-container button[type="submit"] {
+.auth-container button[type='submit'] {
   padding: 12px;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #2a2a2a; 
-  border: 1px solid #333; 
+  background-color: #2a2a2a;
+  border: 1px solid #333;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.auth-container button[type="submit"]:hover {
-  background-color: #45a049; 
+.auth-container button[type='submit']:hover {
+  background-color: #45a049;
 }
 
 /* Secondary button styling */
@@ -55,8 +55,8 @@
   padding: 12px;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #2a2a2a; 
-  border: 1px solid #333; 
+  background-color: #2a2a2a;
+  border: 1px solid #333;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
