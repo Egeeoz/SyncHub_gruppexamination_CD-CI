@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Profile.css';
-import EventHistory from '../components/eventHistory/eventHistory';
+import EventHistory from '../components/eventHistory/eventHistory.jsx';
 
 export default function Profile() {
   return (
