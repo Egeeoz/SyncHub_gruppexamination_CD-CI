@@ -1,0 +1,67 @@
+/* Container styles */
+.auth-container {
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #1f1f1f;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.auth-container h2 {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+}
+
+/* Form styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Input fields */
+.auth-container input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+}
+
+/* Primary button styling */
+.auth-container button[type='submit'] {
+  padding: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.auth-container button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Secondary button styling */
+.auth-container button:last-of-type {
+  padding: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.auth-container button:last-of-type:hover {
+  background-color: #45a078;
+}

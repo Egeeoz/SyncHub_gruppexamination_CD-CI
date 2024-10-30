@@ -1,0 +1,50 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-logo a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a,
+.navbar-links .auth-link {
+  color: #c6c6c6;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  background: none;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover,
+.navbar-links {
+  color: #ffffff;
+}
+
+.auth-link:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}

@@ -1,0 +1,118 @@
+.events-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+  width: calc(50% - 10px);
+  background-color: #ffffff;
+}
+
+.event-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.banner {
+  height: 120px;
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+  background-size: 200% 200%;
+  animation: gradient-rotate 10s ease-in-out infinite;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 23%;
+  }
+  50% {
+    background-position: 100% 78%;
+  }
+  100% {
+    background-position: 0% 23%;
+  }
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.label {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.content {
+  text-align: right;
+}
+
+.actual-id {
+  font-size: 0.9em;
+  color: gray;
+  text-align: center;
+}
+
+.join-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.join-button:hover {
+  background-color: #333333;
+}
+
+.no-events {
+  font-size: 1.5em;
+  text-align: center;
+  color: #aaaaaa;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.event-card-container {
+  position: relative; /* Ensure positioning for highlight */
+}
+
+.highlight {
+  border: 3px solid #4a90e2; /* Thicker border for a stronger effect */
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.8), 0 0 30px rgba(74, 144, 226, 0.5); /* Increased shadow for more depth */
+  transition: all 0.3s ease; /* Smooth transition for the highlight effect */
+}
+
+.additional-info p {
+  padding: 0.3rem 0rem;
+}
+
+.description {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.label-content-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between label and content */
+  align-items: center; /* Center align items vertically */
+  width: 100%; /* Full width to fill the card */
+}

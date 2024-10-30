@@ -1,0 +1,36 @@
+name: Deploy SyncHub
+
+defaults:
+  run:
+    working-directory: ./frontend
+on:
+  push:
+    branches:
+      - Dev
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: npm install
+      - name: Build dist
+        run: npm run build
+
+      - name: Setup pages
+        uses: actions/configure-pages@v3
+      - name: upload dist folder
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './frontend/dist'
+
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

@@ -1,0 +1,120 @@
+org: egestudent
+
+service: syncHub
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::586794471369:role/serverless
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+functions:
+  userSignUp:
+    handler: backend/functions/userSignUp/index.handler
+    events:
+      - httpApi:
+          path: /signup
+          method: post
+  userLogin:
+    handler: backend/functions/userLogin/index.handler
+    events:
+      - httpApi:
+          path: /login
+          method: post
+  createMeetup:
+    handler: backend/functions/createMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: post
+  getAllMeetups:
+    handler: backend/functions/getAllMeetups/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: get
+  updateMeetup:
+    handler: backend/functions/updateMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: put
+  deleteMeetup:
+    handler: backend/functions/deleteMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups
+          method: delete
+  searchMeetups:
+    handler: backend/functions/searchMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/search
+          method: get
+  attendMeetup:
+    handler: backend/functions/attendMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/attend
+          method: post
+  readMeetup:
+    handler: backend/functions/readMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/{id}
+          method: get
+  getUserMeetup:
+    handler: backend/functions/getUserMeetups/index.handler
+    events:
+      - httpApi:
+          path: /meetups/user/{username}
+          method: get
+  rateMeetup:
+    handler: backend/functions/rateMeetup/index.handler
+    events:
+      - httpApi:
+          path: /meetups/rate
+          method: post
+
+resources:
+  Resources:
+    UserTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: UserTable
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+
+    MeetupTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: MeetupTable
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
