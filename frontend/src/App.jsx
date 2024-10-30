@@ -14,7 +14,7 @@ import './App.css';
 
 const App = () => (
   <AuthProvider>
-    <Router basename="/SyncHub_gruppexamination_CD-CI">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<LoginRegister />} />
         <Route
