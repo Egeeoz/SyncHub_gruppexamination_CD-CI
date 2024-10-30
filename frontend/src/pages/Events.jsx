@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Searchbar from '../components/searchbar/searchbar';
 import UpcomingEvents from '../components/upcommingEvents/upcommingEvents';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Events.css';
 
 function Events() {
@@ -29,17 +31,12 @@ function Events() {
     }
   };
 
-  const handleSearch = (keyword) => {
+  const handleSearch = async (keyword) => {
     if (!keyword) {
-      setFilteredEvents(events); // Reset to all events if keyword is empty
+      await fetchEvents();
     } else {
-      setFilteredEvents(
-        events.filter(
-          (event) =>
-            event.title.toLowerCase().includes(keyword.toLowerCase()) ||
-            event.description.toLowerCase().includes(keyword.toLowerCase())
-        )
-      );
+      // Let the backend handle the search instead of client-side filtering
+      await fetchEvents(keyword);
     }
   };
 
@@ -57,29 +54,36 @@ function Events() {
       if (response.ok) {
         // Re-fetch events to update UI
         await fetchEvents();
-        // Show appropriate message based on whether user was joining or leaving
-        alert(
+
+        // Show toast notification based on whether the user was joining or leaving
+        toast.success(
           isCurrentlyAttending
             ? 'Successfully left the event!'
             : 'Successfully joined the event!'
         );
       } else {
         const errorData = await response.json();
-        alert(errorData.message);
+        toast.error(errorData.message);
       }
     } catch (error) {
       console.error('Error updating event attendance:', error);
-      alert('An error occurred. Please try again.');
+      toast.error('An error occurred. Please try again.');
     }
   };
 
   useEffect(() => {
     fetchEvents(); // Fetch all events when the component mounts
   }, []);
+
   return (
     <div className="events-container">
       <Navbar />
       <div className="events-content">
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+        />
         <h1>Upcoming Events</h1>
         <Searchbar onSearch={handleSearch} />
         <UpcomingEvents

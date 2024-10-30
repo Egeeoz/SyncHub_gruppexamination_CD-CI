@@ -1,7 +1,8 @@
 .events-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   width: 100%;
 }
@@ -22,9 +23,10 @@
   transform: translateY(-5px);
 }
 
-.event-banner {
+.banner {
   height: 120px;
   background: linear-gradient(135deg, #4a90e2, #9013fe);
+  background-size: 200% 200%;
   animation: gradient-rotate 10s ease-in-out infinite;
 }
 
@@ -40,42 +42,27 @@
   }
 }
 
-.content-group {
-  padding: 20px;
-}
-
-.event-header {
-  margin-bottom: 10px;
-}
-
-.event-title {
+.title {
   font-size: 1.8em;
   font-weight: bold;
-  color: #333333;
-  margin: 0;
-}
-
-.event-details {
+  color: #ffffff;
+  text-align: center;
   margin: 15px 0;
 }
 
-.event-details p {
-  font-size: 1em;
-  margin: 5px 0;
-  color: #666666;
-}
-
-.description-title {
-  font-size: 1.4em;
+.label {
   font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 10px;
+  margin: 5px 0;
 }
 
-.event-description {
-  font-size: 1em;
-  color: #c4c4c4;
-  line-height: 1.6;
+.content {
+  text-align: right;
+}
+
+.actual-id {
+  font-size: 0.9em;
+  color: gray;
+  text-align: center;
 }
 
 .join-button {
@@ -85,10 +72,10 @@
   color: white;
   font-size: 1em;
   font-weight: bold;
-  text-align: center;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  text-align: center;
   transition: background-color 0.3s;
 }
 
@@ -104,19 +91,28 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .event-card {
-    width: 100%;
-  }
+.event-card-container {
+  position: relative; /* Ensure positioning for highlight */
 }
 
-@media (max-width: 480px) {
-  .event-title {
-    font-size: 1.5em;
-  }
+.highlight {
+  border: 3px solid #4a90e2; /* Thicker border for a stronger effect */
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.8), 0 0 30px rgba(74, 144, 226, 0.5); /* Increased shadow for more depth */
+  transition: all 0.3s ease; /* Smooth transition for the highlight effect */
+}
 
-  .join-button {
-    padding: 10px;
-    font-size: 0.9em;
-  }
+.additional-info p {
+  padding: 0.3rem 0rem;
+}
+
+.description {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.label-content-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between label and content */
+  align-items: center; /* Center align items vertically */
+  width: 100%; /* Full width to fill the card */
 }

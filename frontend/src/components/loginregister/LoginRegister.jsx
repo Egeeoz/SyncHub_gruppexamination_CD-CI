@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './LoginRegister.css';
 
 function LoginRegister() {
@@ -27,25 +29,31 @@ function LoginRegister() {
       });
 
       if (response.status === 404) {
-        alert('Invalid username or password');
+        toast.error('Invalid username or password');
         return;
       }
 
       if (!response.ok) {
         const errorData = await response.json();
-        alert(errorData.message); // Show error message
+        toast.error(errorData.message);
         return;
       }
 
       login(username);
+      toast.success('Authentication successful!');
       navigate('/home');
     } catch (error) {
-      alert('An error occurred: ' + error.message); // Show error message
+      toast.error('An error occurred: ' + error.message);
     }
   };
 
   return (
     <div className="auth-container">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+      />
       <h2>{isLogin ? 'Login' : 'Register'}</h2>
       <form onSubmit={handleAuth}>
         <input
