@@ -10,6 +10,5 @@ serverless.yml
 
 # Logs 
 
-dist-ssr
 *.local
 
