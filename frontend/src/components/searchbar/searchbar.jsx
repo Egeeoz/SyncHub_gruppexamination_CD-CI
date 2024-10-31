@@ -4,9 +4,9 @@ import './searchbar.css';
 const Searchbar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-    onSearch(e.target.value);
+  const handleSearchChange = ({ target: { value } }) => {
+    setSearchTerm(value);
+    onSearch(value);
   };
 
   return (

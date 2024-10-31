@@ -44,24 +44,6 @@ functions:
       - httpApi:
           path: /meetups
           method: post
-  getAllMeetups:
-    handler: backend/functions/getAllMeetups/index.handler
-    events:
-      - httpApi:
-          path: /meetups
-          method: get
-  updateMeetup:
-    handler: backend/functions/updateMeetup/index.handler
-    events:
-      - httpApi:
-          path: /meetups
-          method: put
-  deleteMeetup:
-    handler: backend/functions/deleteMeetup/index.handler
-    events:
-      - httpApi:
-          path: /meetups
-          method: delete
   searchMeetups:
     handler: backend/functions/searchMeetup/index.handler
     events:
@@ -73,24 +55,6 @@ functions:
     events:
       - httpApi:
           path: /meetups/attend
-          method: post
-  readMeetup:
-    handler: backend/functions/readMeetup/index.handler
-    events:
-      - httpApi:
-          path: /meetups/{id}
-          method: get
-  getUserMeetup:
-    handler: backend/functions/getUserMeetups/index.handler
-    events:
-      - httpApi:
-          path: /meetups/user/{username}
-          method: get
-  rateMeetup:
-    handler: backend/functions/rateMeetup/index.handler
-    events:
-      - httpApi:
-          path: /meetups/rate
           method: post
 
 resources:

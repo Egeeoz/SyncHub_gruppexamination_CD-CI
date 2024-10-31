@@ -1,0 +1,32 @@
+.event-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-history h1 {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.event-card {
+  margin: 0.5rem;
+}
+
+.leave-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.leave-button:hover {
+  background-color: #333333;
+}

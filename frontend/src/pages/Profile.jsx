@@ -3,7 +3,6 @@ import Footer from '../components/Footer/Footer';
 import './Profile.css';
 
 import React, { useEffect, useState } from 'react';
-// import '../components/eventHistory/Eventhistory.css';
 import { useAuth } from '../auth/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -60,7 +59,6 @@ export default function Profile() {
   return (
     <div>
       <Navbar />
-      {/* <EventHistory /> */}
       <div className="event-history">
         <ToastContainer
           position="top-right"
@@ -94,7 +92,10 @@ export default function Profile() {
                   <p>
                     <strong>Description:</strong> {event.description}
                   </p>
-                  <button onClick={() => handleLeaveEvent(event.id)}>
+                  <button
+                    className="leave-button"
+                    onClick={() => handleLeaveEvent(event.id)}
+                  >
                     Leave Event
                   </button>
                 </div>
